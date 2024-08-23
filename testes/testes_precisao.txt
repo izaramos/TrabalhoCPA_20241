@@ -15,7 +15,7 @@ Saída:
         B = 10
     Saída Esperada: 
         E = {{10}}
-    Solução Ótima: 1 caixa.
+    Solução Ótima: 1 pacote.
 
 
 2. Tamanho exato de B
@@ -36,7 +36,7 @@ Saída:
         B = 10
     Saída Esperada: 
         E = {{2,8}, {3}}
-    Solução Ótima: 2 pacotes;
+    Solução Ótima: 2 pacotes.
 
 
 4. Itens muito pesados
