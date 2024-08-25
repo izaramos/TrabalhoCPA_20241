@@ -21,17 +21,22 @@ Para certificar que a versão esteja correta, instale as dependências (mesmo qu
    make
    ```
   
-  2. **Executando o caso base (Teste número 1):**
+  2. **Executando o caso base (Teste 1):**
   ```bash
    make run
    ```
 
-  3. **Executando um caso específico para o backtracking (Teste 4):**
+  3. **Executando um caso específico em ambos algoritmos (Teste 4):**
+  ```bash
+   make run input=in-4.txt
+   ```
+
+  4. **Executando um caso específico apenas com o algoritmo backtracking (Teste 4):**
   ```bash
    node ./src/binPackingBacktracking.js ./testes/in-4.txt
    ```
 
-  4. **Executando um caso específico para o FFD (Teste 4):**
+  5. **Executando um caso específico apenas com o algoritmo FFD (Teste 4):**
   ```bash
    node ./src/binPackingFirstFit.js ./testes/in-4.txt
    ``` 
