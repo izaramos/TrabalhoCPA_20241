@@ -1,45 +1,130 @@
-# Variáveis
-CXX = g++            # Compilador C++
-CXXFLAGS = -Wall -g  # Flags de compilação
-SRCDIR = src         # Diretório dos arquivos fonte
-TARGET1 = algoritmo_forcaB       # Nome do executável para algoritmo_forcaB
-TARGET2 = algoritmo_aproximado       # Nome do executável para algoritmo_aproximado
+NODE = node
+NVM_DIR = $(HOME)/.nvm
+REQUIRED_NODE_VERSION = 14.0.0
+SRCDIR = ./src
+TESTDIR = ./testes
+SCRIPT1 = $(SRCDIR)/binPackingBacktracking.js
+SCRIPT2 = $(SRCDIR)/binPackingFirstFit.js
+DEFAULT_INPUT = in-1.txt
 
-# Arquivos de origem específicos
-SRC1 = $(SRCDIR)/algoritmo_forcaB.cpp
-SRC2 = $(SRCDIR)/algoritmo_aproximado.cpp
+# Preparação do ambiente
+all:
+	@if [ -s "$(NVM_DIR)/nvm.sh" ]; then \
+		echo "Carregando nvm..."; \
+		. "$(NVM_DIR)/nvm.sh"; \
+		make check_node_with_nvm; \
+	else \
+		echo "nvm não encontrado."; \
+		if command -v $(NODE) &> /dev/null; then \
+			echo "Node.js encontrado."; \
+			make check_node_version; \
+		else \
+			echo "Node.js não encontrado. Instalando Node.js..."; \
+			make install_node_without_nvm; \
+		fi \
+	fi
 
-# Arquivos objeto correspondentes
-OBJ1 = $(SRC1:.cpp=.o)
-OBJ2 = $(SRC2:.cpp=.o)
+# Verifica a versão do Node.js usando nvm
+check_node_with_nvm:
+	@. "$(NVM_DIR)/nvm.sh"; \
+	CURRENT_VERSION=$$(nvm current); \
+	if [ "$$(echo $$CURRENT_VERSION | grep $(REQUIRED_NODE_VERSION))" != "" ]; then \
+		echo "Versão do Node.js ($$CURRENT_VERSION) está correta."; \
+	else \
+		echo "Versão do Node.js ($$CURRENT_VERSION) está incorreta. Instalando a versão correta..."; \
+		nvm install $(REQUIRED_NODE_VERSION); \
+		nvm use $(REQUIRED_NODE_VERSION); \
+	fi
 
-# Regra padrão (compila todos os algoritmos)
-all: $(TARGET1) $(TARGET2)
+# Verifica a versão do Node.js sem nvm
+check_node_version:
+	@CURRENT_VERSION=$$($(NODE) -v | sed 's/v//'); \
+	if [ "$$(echo $(REQUIRED_NODE_VERSION) $$CURRENT_VERSION | awk '{print ($$2 >= $$1)}')" = "1" ]; then \
+		echo "Versão do Node.js ($$CURRENT_VERSION) está correta."; \
+	else \
+		echo "Versão do Node.js ($$CURRENT_VERSION) está incorreta. Desinstalando e instalando a versão correta..."; \
+		make install_node_without_nvm; \
+	fi
 
-# Regra para construir o executável do algoritmo_forcaB
-$(TARGET1): $(OBJ1)
-	$(CXX) $(CXXFLAGS) -o $(TARGET1) $(OBJ1)
+# Instalação do Node.js diretamente (sem nvm)
+install_node_without_nvm:
+	@echo "Instalando Node.js..."; \
+	sudo apt-get remove --purge nodejs -y || true; \
+	sudo apt-get install -y curl; \
+	curl -fsSL https://deb.nodesource.com/setup_$(REQUIRED_NODE_VERSION).x | sudo -E bash -; \
+	sudo apt-get install -y nodejs; \
+	node -v
 
-# Regra para construir o executável do algoritmo_aproximado
-$(TARGET2): $(OBJ2)
-	$(CXX) $(CXXFLAGS) -o $(TARGET2) $(OBJ2)
+# Regra para rodar ambos os algoritmos com o arquivo padrão ou especificado
+run:
+	$(NODE) $(SCRIPT1) $(TESTDIR)/$(input)
+	$(NODE) $(SCRIPT2) $(TESTDIR)/$(input)
 
-# Regra para compilar os arquivos .cpp em .o para algoritmo_forcaB
-$(SRCDIR)/algoritmo_forcaB.o: $(SRCDIR)/algoritmo_forcaB.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+# Regras para rodar testes individuais de força bruta
+run_bruteforce-1:
+	$(NODE) $(SCRIPT1) $(TESTDIR)/in-1.txt
 
-# Regra para compilar os arquivos .cpp em .o para algoritmo_aproximado
-$(SRCDIR)/algoritmo_aproximado.o: $(SRCDIR)/algoritmo_aproximado.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+run_bruteforce-2:
+	$(NODE) $(SCRIPT1) $(TESTDIR)/in-2.txt
 
-# Limpar arquivos compilados
+run_bruteforce-3:
+	$(NODE) $(SCRIPT1) $(TESTDIR)/in-3.txt
+
+run_bruteforce-4:
+	$(NODE) $(SCRIPT1) $(TESTDIR)/in-4.txt
+
+run_bruteforce-5:
+	$(NODE) $(SCRIPT1) $(TESTDIR)/in-5.txt
+
+run_bruteforce-6:
+	$(NODE) $(SCRIPT1) $(TESTDIR)/in-6.txt
+
+run_bruteforce-7:
+	$(NODE) $(SCRIPT1) $(TESTDIR)/in-7.txt
+
+run_bruteforce-8:
+	$(NODE) $(SCRIPT1) $(TESTDIR)/in-8.txt
+
+run_bruteforce-9:
+	$(NODE) $(SCRIPT1) $(TESTDIR)/in-9.txt
+
+run_bruteforce-10:
+	$(NODE) $(SCRIPT1) $(TESTDIR)/in-10.txt
+
+# Regras para rodar testes individuais com heurística
+run_firstfit-1:
+	$(NODE) $(SCRIPT2) $(TESTDIR)/in-1.txt
+
+run_firstfit-2:
+	$(NODE) $(SCRIPT2) $(TESTDIR)/in-2.txt
+
+run_firstfit-3:
+	$(NODE) $(SCRIPT2) $(TESTDIR)/in-3.txt
+
+run_firstfit-4:
+	$(NODE) $(SCRIPT2) $(TESTDIR)/in-4.txt
+
+run_firstfit-5:
+	$(NODE) $(SCRIPT2) $(TESTDIR)/in-5.txt
+
+run_firstfit-6:
+	$(NODE) $(SCRIPT2) $(TESTDIR)/in-6.txt
+
+run_firstfit-7:
+	$(NODE) $(SCRIPT2) $(TESTDIR)/in-7.txt
+
+run_firstfit-8:
+	$(NODE) $(SCRIPT2) $(TESTDIR)/in-8.txt
+
+run_firstfit-9:
+	$(NODE) $(SCRIPT2) $(TESTDIR)/in-9.txt
+
+run_firstfit-10:
+	$(NODE) $(SCRIPT2) $(TESTDIR)/in-10.txt
+
+# Valor padrão para a variável input
+input ?= $(DEFAULT_INPUT)
+
+# Limpar arquivos de logs
 clean:
-	rm -f $(SRCDIR)/*.o $(TARGET1) $(TARGET2)
-
-# Regra para executar o algoritmo_forcaB
-run_algoritmo_forcaB: $(TARGET1)
-	./$(TARGET1)
-
-# Regra para executar o algoritmo_aproximado
-run_algoritmo_aproximado: $(TARGET2)
-	./$(TARGET2)
+	rm -f *.log
