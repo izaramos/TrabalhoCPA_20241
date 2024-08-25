@@ -8,7 +8,7 @@
 
 
 ## Repositório no GitHub:
-O repositório pode ser encontrado em: ![https://github.com/izaramos/problemas-classicos-BP.git]
+O repositório pode ser encontrado em: https://github.com/izaramos/problemas-classicos-BP.git
 
 ## Para executar:
 
