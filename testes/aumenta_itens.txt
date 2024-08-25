@@ -14,7 +14,7 @@ Testes com aumento do número de itens (n) e mesmo tamanho dos caixas (B):
         n = 5
         s = [5, 6, 4, 10, 8]
         B = 10
-    Saída Esperada: 
+    Uma das soluções ótimas possíveis: 
         E = {{10}, {6,4}, {8}, {5}}
     Solução Ótima: 4 caixas.
 
@@ -24,7 +24,7 @@ Testes com aumento do número de itens (n) e mesmo tamanho dos caixas (B):
         n = 8
         s = [9, 6, 2, 4, 3, 7, 1, 5]
         B = 10
-    Saída Esperada: 
+    Uma das soluções ótimas possíveis: 
         E = {{9,1}, {6,4}, {7,3}, {5,2}}
     Solução Ótima: 4 caixas.
 
@@ -34,7 +34,7 @@ Testes com aumento do número de itens (n) e mesmo tamanho dos caixas (B):
         n = 11
         s = [1, 10, 5, 7, 3, 4, 6, 9, 2, 8, 3]
         B = 10
-    Saída Esperada: 
+    Uma das soluções ótimas possíveis: 
         E = {{10}, {9,1}, {8,2}, {7,3}, {6,4}, {5,3}}
     Solução Ótima: 6 caixas.
 
@@ -44,7 +44,7 @@ Testes com aumento do número de itens (n) e mesmo tamanho dos caixas (B):
         n = 14
         s = [7, 4, 2, 9, 1, 5, 6, 3, 10, 8, 4, 7, 1, 2]
         B = 10
-    Saída Esperada: 
+    Uma das soluções ótimas possíveis: 
         E = {{10}, {9,1}, {8,2}, {7,3}, {7,2,1}, {6,4}, {5,4}}
     Solução Ótima: 7 caixas.
 
@@ -54,6 +54,6 @@ Testes com aumento do número de itens (n) e mesmo tamanho dos caixas (B):
         n = 17
         s = [10, 5, 9, 6, 1, 2, 7, 4, 8, 3, 10, 6, 2, 1, 8, 4, 7]
         B = 10
-    Saída Esperada: 
+    Uma das soluções ótimas possíveis: 
         E = {{10}, {10}, {9,1}, {8,2}, {8,2}, {7,3}, {7,1}, {6,4}, {6,4}, {5}}
     Solução Ótima: 10 caixas.
