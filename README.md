@@ -7,6 +7,9 @@
 - **Backtracking**: é um dos mais complexos e custosos, ele permite que o problema seja resolvido em tempo exponencial e consiste em tentar colocar cada item em uma caixa, de modo que a soma dos pesos dos itens em cada caixa seja sempre menor ou igual ao tamanho da caixa.
 
 
+## Repositório no GitHub:
+O repositório pode ser encontrado em: ![https://github.com/izaramos/problemas-classicos-BP.git]
+
 ## Para executar:
 
 Utilizamos o node para construção dos algoritmos.
