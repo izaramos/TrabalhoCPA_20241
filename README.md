@@ -10,6 +10,7 @@
 ## Para executar:
 
 Utilizamos o node para construção dos algoritmos.
+
 Para certificar que a versão esteja correta, instale as dependências (mesmo que em sua máquina haja o node instalado, esse script vai reinstalar a versão correta (14)).
 
   1. **Instalando as dependências do node em sua máquina via terminal ou prompt de comando:**
