@@ -1,20 +1,20 @@
 const fs = require('fs');
 
-function binPackingFirstFit(sizes, binCapacity) {
-    sizes.sort((a, b) => b - a);
+function binPackingFirstFit(itens, binCapacity) {
+    itens.sort((a, b) => b - a);
 
     const bins = [];
-    for (let size of sizes) {
+    for (let item of itens) {
         let placed = false;
         for (let bin of bins) {
-            if (bin.reduce((a, b) => a + b, 0) + size <= binCapacity) {
-                bin.push(size);
+            if (bin.reduce((a, b) => a + b, 0) + item <= binCapacity) {
+                bin.push(item);
                 placed = true;
                 break;
             }
         }
         if (!placed) {
-            bins.push([size]);
+            bins.push([item]);
         }
     }
     return bins;
@@ -25,10 +25,10 @@ function main() {
     
     const data = fs.readFileSync(inputFilePath, 'utf8').split('\n');
     const binCapacity = parseInt(data[0].trim());
-    const sizes = data[1].split(' ').map(Number);
+    const itens = data[1].split(' ').map(Number);
 
     const startTime = process.hrtime();
-    const result = binPackingFirstFit(sizes, binCapacity);
+    const result = binPackingFirstFit(itens, binCapacity);
     const endTime = process.hrtime(startTime);
 
     const elapsedTime = (endTime[0] * 1000 + endTime[1] / 1e6).toFixed(2);
