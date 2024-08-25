@@ -1,8 +1,8 @@
 const fs = require('fs');
 
-function binPackingBacktracking(sizes, binCapacity) {
-    function isValid(configuration) {
-        for (let bin of configuration) {
+function binPackingBacktracking(itens, binCapacity) {
+    function isValid(currentBins) {
+        for (let bin of currentBins) {
             const binSum = bin.reduce((a, b) => a + b, 0);
             if (binSum > binCapacity) {
                 return false;
@@ -12,12 +12,12 @@ function binPackingBacktracking(sizes, binCapacity) {
     }
 
     function packItems(index, currentBins) {
-        if (index === sizes.length) {
+        if (index === itens.length) {
             return isValid(currentBins) ? currentBins : null;
         }
 
         for (let bin of currentBins) {
-            bin.push(sizes[index]);
+            bin.push(itens[index]);
             const result = packItems(index + 1, currentBins);
             if (result) {
                 return result;
@@ -25,7 +25,7 @@ function binPackingBacktracking(sizes, binCapacity) {
             bin.pop();
         }
 
-        const newBin = [sizes[index]];
+        const newBin = [itens[index]];
         currentBins.push(newBin);
         const result = packItems(index + 1, currentBins);
         if (result) {
@@ -44,10 +44,10 @@ function main() {
     
     const data = fs.readFileSync(inputFilePath, 'utf8').split('\n');
     const binCapacity = parseInt(data[0].trim());
-    const sizes = data[1].split(' ').map(Number);
+    const itens = data[1].split(' ').map(Number);
 
     const startTime = process.hrtime();
-    const result = binPackingBacktracking(sizes, binCapacity);
+    const result = binPackingBacktracking(itens, binCapacity);
     const endTime = process.hrtime(startTime);
 
     const elapsedTime = (endTime[0] * 1000 + endTime[1] / 1e6).toFixed(2);
