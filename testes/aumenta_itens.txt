@@ -12,7 +12,7 @@ Testes com aumento do número de itens (n) e mesmo tamanho dos pacotes (B):
 1. 5 itens
     Entradas: 
         n = 5
-        s = [10]
+        s = [5, 6, 4, 10, 8]
         B = 10
     Saída Esperada: 
         E = {{10}}
@@ -22,7 +22,7 @@ Testes com aumento do número de itens (n) e mesmo tamanho dos pacotes (B):
 2. 8 itens
     Entradas: 
         n = 8
-        s = [4, 4]
+        s = [9, 6, 2, 4, 3, 7, 1, 5]
         B = 10
     Saída Esperada: 
         E = {{4}, {4}}
@@ -31,7 +31,7 @@ Testes com aumento do número de itens (n) e mesmo tamanho dos pacotes (B):
 3. 11 itens
     Entradas: 
         n = 11
-        s = [2, 3, 8]
+        s = [1, 10, 5, 7, 3, 4, 6, 9, 2, 8, 3]
         B = 10
     Saída Esperada: 
         E = {{2,8}, {3}}
@@ -41,7 +41,7 @@ Testes com aumento do número de itens (n) e mesmo tamanho dos pacotes (B):
 4. 14 itens
     Entradas: 
         n = 14
-        s = [5, 6, 7]
+        s = [7, 4, 2, 9, 1, 5, 6, 3, 10, 8, 4, 7, 1, 2]
         B = 10
     Saída Esperada: 
         E = {}
@@ -51,7 +51,7 @@ Testes com aumento do número de itens (n) e mesmo tamanho dos pacotes (B):
 5. 17 itens
     Entradas: 
         n = 17
-        s = [1, 2, 3]
+        s = [10, 5, 9, 6, 1, 2, 7, 4, 8, 3, 10, 6, 2, 1, 8, 4, 7]
         B = 10
     Saída Esperada: 
         E = {{1,3}, {2}}
@@ -61,7 +61,7 @@ Testes com aumento do número de itens (n) e mesmo tamanho dos pacotes (B):
 6. 20 itens
     Entradas: 
         n = 20
-        s = [2, 3, 5, 4]
+        s = [6, 9, 2, 7, 3, 4, 8, 1, 5, 10, 2, 6, 7, 9, 4, 1, 5, 8, 3, 10]
         B = 10
     Saída Esperada: 
         E = {{2,5}, {3,4}}

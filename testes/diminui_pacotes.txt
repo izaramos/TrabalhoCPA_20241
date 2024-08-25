@@ -12,7 +12,7 @@ Testes com diminuição no tamanho dos pacotes (B) e mesmo número de itens (n):
 7. Pacotes de tamanho 9
     Entradas: 
         n = 17
-        s = [3, 7, 8, 6, 5, 2, 9, 1, 4, 7, 6, 8, 3, 5, 4, 2]
+        s = [3, 4, 2, 3, 6, 5, 1, 3, 4, 5, 2, 3, 6, 2, 3, 4, 5]
         B = 9
     Saída Esperada: 
         E = {{9,1}, {8,2}, {7,3}, {7,3}, {6,4}, {6,4}, {8,2}, {5,5}}
@@ -22,7 +22,7 @@ Testes com diminuição no tamanho dos pacotes (B) e mesmo número de itens (n):
 8. Pacotes de tamanho 8
     Entradas:
         n = 17
-        s = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 9, 8, 7, 6, 5, 4, 3]
+        s = [3, 4, 2, 3, 6, 5, 1, 3, 4, 5, 2, 3, 6, 2, 3, 4, 5]
         B = 8
     Saída Esperada:
         E = {{10}, {9,1}, {8,2}, {7,3}, {6,4}, {5,5}, {9,1}, {8,2}, {7,3}}
@@ -32,7 +32,7 @@ Testes com diminuição no tamanho dos pacotes (B) e mesmo número de itens (n):
 9. Pacotes de tamanho 7
     Entradas:
         n = 17
-        s = [2, 3, 8, 7, 6, 4, 9, 1, 5, 2, 3, 8, 7, 6, 4, 9, 1, 5]
+        s = [3, 4, 2, 3, 6, 5, 1, 3, 4, 5, 2, 3, 6, 2, 3, 4, 5]
         B = 7
     Saída Esperada:
         E = {{9,1}, {8,2}, {7,3}, {6,4}, {9,1}, {8,2}, {7,3}, {6,4}, {5,5}}
@@ -42,7 +42,7 @@ Testes com diminuição no tamanho dos pacotes (B) e mesmo número de itens (n):
 10. Pacotes de tamanho 6
     Entradas:
         n = 17
-        s = [7, 4, 8, 2, 6, 9, 3, 1, 5, 7, 4, 8, 2, 6, 9, 3, 1, 5, 10]
+        s = [3, 4, 2, 3, 6, 5, 1, 3, 4, 5, 2, 3, 6, 2, 3, 4, 5]
         B = 6
     Saída Esperada:
         E = {{10}, {9,1}, {8,2}, {7,3}, {6,4}, {9,1}, {8,2}, {7,3}, {6,4}, {5,5}}
