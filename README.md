@@ -1,10 +1,10 @@
 # PROBLEMA DO BIN PACKING
 
-## Os algoritmos escolhidos pelo grupo:
+## Algoritmos escolhidos pelo grupo:
 
-- **First-Fit-Decreasing**: O algoritmo First-Fit é um dos mais simples e eficientes. Ele permite que o problema seja resolvido em tempo linear. E consiste em colocar cada item em uma caixa, de modo que a soma dos pesos dos itens em cada caixa seja sempre menor ou igual ao tamanho da caixa.
+- **First-Fit-Decreasing**: é um dos mais simples e eficientes, ele permite que o problema seja resolvido em tempo linear e consiste em colocar cada item em uma caixa, de modo que a soma dos pesos dos itens em cada caixa seja sempre menor ou igual ao tamanho da caixa.
 
-- **Backtracking**: O algoritmo Backtracking é um dos mais complexo e custoso. Ele permite que o problema seja resolvido em tempo exponencial. Ele consiste em tentar colocar cada item em uma caixa, de modo que a soma dos pesos dos itens em cada caixa seja sempre menor ou igual ao tamanho da caixa. O algoritmo Backtracking é um dos algoritmos mais complexos e custosos do grupo.
+- **Backtracking**: é um dos mais complexo e custoso, ele permite que o problema seja resolvido em tempo exponencial e consiste em tentar colocar cada item em uma caixa, de modo que a soma dos pesos dos itens em cada caixa seja sempre menor ou igual ao tamanho da caixa.
 
 
 ## Para executar:
