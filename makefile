@@ -8,7 +8,7 @@ SCRIPT2 = $(SRCDIR)/binPackingFirstFit.js
 DEFAULT_INPUT = in-1.txt
 
 # Preparação do ambiente
-all: remove_conflicting_packages install_node_without_nvm run
+all: remove_conflicting_packages install_node_without_nvm
 
 # Remove pacotes conflitantes
 remove_conflicting_packages:
