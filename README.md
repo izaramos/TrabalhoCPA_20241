@@ -1,6 +1,6 @@
 # PROBLEMA DO BIN PACKING
 
-## Os algoritmos escolhidos pelo grupo para resolver o problema da Bin Packing são:
+## Os algoritmos escolhidos pelo grupo:
 
 - **First-Fit-Decreasing**: O algoritmo First-Fit é um dos mais simples e eficientes. Ele permite que o problema seja resolvido em tempo linear. E consiste em colocar cada item em uma caixa, de modo que a soma dos pesos dos itens em cada caixa seja sempre menor ou igual ao tamanho da caixa.
 
