@@ -9,7 +9,6 @@ Saída:
 
 Testes com diminuição no tamanho dos pacotes (B) e mesmo número de itens (n):
 
-
 7. Pacotes de tamanho 9
     Entradas: 
         n = 17

@@ -9,7 +9,6 @@ Saída:
 
 Testes com aumento do número de itens (n) e mesmo tamanho dos pacotes (B):
 
-
 1. 5 itens
     Entradas: 
         n = 5
@@ -17,7 +16,7 @@ Testes com aumento do número de itens (n) e mesmo tamanho dos pacotes (B):
         B = 10
     Saída Esperada: 
         E = {{10}}
-    Solução Ótima: 1 pacote.
+    Solução Ótima: 1 pacotes.
 
 
 2. 8 itens
