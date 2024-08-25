@@ -1,5 +1,4 @@
 NODE = node
-NVM_DIR = $(HOME)/.nvm
 REQUIRED_NODE_VERSION = 14.0.0
 SRCDIR = ./src
 TESTDIR = ./testes
