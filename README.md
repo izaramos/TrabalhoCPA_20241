@@ -4,7 +4,7 @@
 
 - **First-Fit-Decreasing**: é um dos mais simples e eficientes, ele permite que o problema seja resolvido em tempo linear e consiste em colocar cada item em uma caixa, de modo que a soma dos pesos dos itens em cada caixa seja sempre menor ou igual ao tamanho da caixa.
 
-- **Backtracking**: é um dos mais complexo e custoso, ele permite que o problema seja resolvido em tempo exponencial e consiste em tentar colocar cada item em uma caixa, de modo que a soma dos pesos dos itens em cada caixa seja sempre menor ou igual ao tamanho da caixa.
+- **Backtracking**: é um dos mais complexos e custosos, ele permite que o problema seja resolvido em tempo exponencial e consiste em tentar colocar cada item em uma caixa, de modo que a soma dos pesos dos itens em cada caixa seja sempre menor ou igual ao tamanho da caixa.
 
 
 ## Para executar:
