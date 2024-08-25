@@ -1,49 +1,58 @@
 Entradas:
     - n: número de itens a serem empacotados
     - s[n]: arranjo com os pesos dos itens
-    - B: tamanho das pacotes
+    - B: tamanho das caixas
 
 Saída:
-    - E: conjunto dos pacotes, que somados não devem ultrapassar B
+    - E: conjunto dos caixas, que somados não devem ultrapassar B
 
 
-Testes com diminuição no tamanho dos pacotes (B) e mesmo número de itens (n):
+Testes com diminuição no tamanho dos caixas (B) e mesmo número de itens (n):
 
-7. Pacotes de tamanho 9
+6. Caixas de tamanho 11
     Entradas: 
-        n = 17
-        s = [3, 4, 2, 3, 6, 5, 1, 3, 4, 5, 2, 3, 6, 2, 3, 4, 5]
-        B = 9
+        n = 14
+        s = [4, 2, 6, 1, 3, 5, 2, 6, 4, 1, 3, 5, 2, 4]
+        B = 11
     Saída Esperada: 
-        E = {{9,1}, {8,2}, {7,3}, {7,3}, {6,4}, {6,4}, {8,2}, {5,5}}
-    Solução Ótima: 8 pacotes.
+        E = {{4,2,1,3,1}, {6,5}, {2,6,3}, {4,5,2}, {4}}
+    Solução Ótima: 5 caixas.
 
 
-8. Pacotes de tamanho 8
+7. Caixas de tamanho 9
     Entradas:
-        n = 17
-        s = [3, 4, 2, 3, 6, 5, 1, 3, 4, 5, 2, 3, 6, 2, 3, 4, 5]
+        n = 14
+        s = [4, 2, 6, 1, 3, 5, 2, 6, 4, 1, 3, 5, 2, 4]
+        B = 9
+    Saída Esperada:
+        E = {{4,2,1,2}, {6,3}, {5,4}, {6,1,2}, {3,5}, {4}}
+    Solução Ótima: 6 caixas.
+
+
+8. Caixas de tamanho 8
+    Entradas:
+        n = 14
+        s = [4, 2, 6, 1, 3, 5, 2, 6, 4, 1, 3, 5, 2, 4]
         B = 8
     Saída Esperada:
-        E = {{10}, {9,1}, {8,2}, {7,3}, {6,4}, {5,5}, {9,1}, {8,2}, {7,3}}
-    Solução Ótima: 9 pacotes.
+        E = {{6,2}, {6,2}, {5,3}, {5,3}, {4,4}, {4,2,1,1}}
+    Solução Ótima: 6 caixas.
 
 
-9. Pacotes de tamanho 7
+9. Caixas de tamanho 7
     Entradas:
-        n = 17
-        s = [3, 4, 2, 3, 6, 5, 1, 3, 4, 5, 2, 3, 6, 2, 3, 4, 5]
+        n = 14
+        s = [4, 2, 6, 1, 3, 5, 2, 6, 4, 1, 3, 5, 2, 4]
         B = 7
     Saída Esperada:
-        E = {{9,1}, {8,2}, {7,3}, {6,4}, {9,1}, {8,2}, {7,3}, {6,4}, {5,5}}
-    Solução Ótima: 9 pacotes.
+        E = {{6,1}, {6,1}, {5,2}, {5,2}, {4,3}, {4,3}, {4,2}}
+    Solução Ótima: 7 caixas.
 
-
-10. Pacotes de tamanho 6
+10. Caixas de tamanho 6
     Entradas:
-        n = 17
-        s = [3, 4, 2, 3, 6, 5, 1, 3, 4, 5, 2, 3, 6, 2, 3, 4, 5]
+        n = 14
+        s = [4, 2, 6, 1, 3, 5, 2, 6, 4, 1, 3, 5, 2, 4]
         B = 6
     Saída Esperada:
-        E = {{10}, {9,1}, {8,2}, {7,3}, {6,4}, {9,1}, {8,2}, {7,3}, {6,4}, {5,5}}
-    Solução Ótima: 10 pacotes.
+        E = {{6}, {6}, {5,1}, {5,1}, {4,2}, {4,2}, {4,2}, {3,3}}
+    Solução Ótima: 8 caixas.
