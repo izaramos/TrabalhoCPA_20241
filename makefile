@@ -8,50 +8,20 @@ SCRIPT2 = $(SRCDIR)/binPackingFirstFit.js
 DEFAULT_INPUT = in-1.txt
 
 # Preparação do ambiente
-all:
-	@if [ -s "$(NVM_DIR)/nvm.sh" ]; then \
-		echo "Carregando nvm..."; \
-		. "$(NVM_DIR)/nvm.sh"; \
-		make check_node_with_nvm; \
-	else \
-		echo "nvm não encontrado."; \
-		if command -v $(NODE) &> /dev/null; then \
-			echo "Node.js encontrado."; \
-			make check_node_version; \
-		else \
-			echo "Node.js não encontrado. Instalando Node.js..."; \
-			make install_node_without_nvm; \
-		fi \
-	fi
+all: remove_conflicting_packages install_node_without_nvm run
 
-# Verifica a versão do Node.js usando nvm
-check_node_with_nvm:
-	@. "$(NVM_DIR)/nvm.sh"; \
-	CURRENT_VERSION=$$(nvm current); \
-	if [ "$$(echo $$CURRENT_VERSION | grep $(REQUIRED_NODE_VERSION))" != "" ]; then \
-		echo "Versão do Node.js ($$CURRENT_VERSION) está correta."; \
-	else \
-		echo "Versão do Node.js ($$CURRENT_VERSION) está incorreta. Instalando a versão correta..."; \
-		nvm install $(REQUIRED_NODE_VERSION); \
-		nvm use $(REQUIRED_NODE_VERSION); \
-	fi
-
-# Verifica a versão do Node.js sem nvm
-check_node_version:
-	@CURRENT_VERSION=$$($(NODE) -v | sed 's/v//'); \
-	if [ "$$(echo $(REQUIRED_NODE_VERSION) $$CURRENT_VERSION | awk '{print ($$2 >= $$1)}')" = "1" ]; then \
-		echo "Versão do Node.js ($$CURRENT_VERSION) está correta."; \
-	else \
-		echo "Versão do Node.js ($$CURRENT_VERSION) está incorreta. Desinstalando e instalando a versão correta..."; \
-		make install_node_without_nvm; \
-	fi
+# Remove pacotes conflitantes
+remove_conflicting_packages:
+	@echo "Removendo pacotes conflitantes..."; \
+	sudo apt-get remove --purge nodejs libnode72 -y || true; \
+	sudo apt-get autoremove -y || true; \
+	sudo apt-get clean || true;
 
 # Instalação do Node.js diretamente (sem nvm)
 install_node_without_nvm:
-	@echo "Instalando Node.js..."; \
-	sudo apt-get remove --purge nodejs -y || true; \
+	@echo "Instalando Node.js versão $(REQUIRED_NODE_VERSION)..."; \
 	sudo apt-get install -y curl; \
-	curl -fsSL https://deb.nodesource.com/setup_$(REQUIRED_NODE_VERSION).x | sudo -E bash -; \
+	curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -; \
 	sudo apt-get install -y nodejs; \
 	node -v
 
